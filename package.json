@@ -1,0 +1,33 @@
+{
+  "name": "nodejsios",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "devstart": " nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "mongoose-extend-schema": "^1.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnimalyProjectiOs/animaly_nodejsbackend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AnimalyProjectiOs/animaly_nodejsbackend/issues"
+  },
+  "homepage": "https://github.com/AnimalyProjectiOs/animaly_nodejsbackend#readme",
+  "description": ""
+}

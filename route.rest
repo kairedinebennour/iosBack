@@ -1,0 +1,229 @@
+
+//animal
+GET http://localhost:3000/animals
+
+###
+
+GET http://localhost:3000/animals/618bf0629193b68001202011
+###
+
+POST http://localhost:3000/animals
+Content-Type:  application/json
+
+{
+"nom":"Nora",
+"espece": "chien",
+"race": "tabby",
+"age": "1",
+"sexe": "female",
+"taille": "moyen",
+"couleur": "marron",
+"stérilisé": "true"   
+}
+
+###
+
+PATCH http://localhost:3000/animals/6193707e6cdde519b134bbf2
+Content-Type:  application/json
+
+{
+"nom": "Oscar",
+"espece": "chat",
+"race": "tabby",
+"age": "3",
+"sexe": "male",
+"taille": "moyen",
+"couleur": "marron",
+"vacciné": "true"   
+}
+
+###
+DELETE http://localhost:3000/animals/6193707e6cdde519b134bbf2
+
+###
+//product
+
+GET http://localhost:3000/products
+
+###
+
+GET http://localhost:3000/products/6189a723ecce617b4b4e5016
+
+###
+
+POST http://localhost:3000/products
+Content-Type:  application/json
+
+{
+"nom": "Salami",
+"libelle": "alimentation pour les chats",
+"quantite": "2",
+"prix": "8",
+"categorie": "alimentation"
+}
+
+###
+
+PATCH http://localhost:3000/products/6189a74aecce617b4b4e5019
+Content-Type:  application/json
+
+{
+"nom": "Salami",
+"libelle": "alimentation pour les chats",
+"quantite": "3",
+"prix": "8",
+"categorie": "alimentation"
+}
+###
+DELETE http://localhost:3000/products/618a2d3a13595026c78d88b2
+
+###
+//elevage
+
+GET http://localhost:3000/elevages
+
+###
+
+GET http://localhost:3000/elevages/6191346c2a1f4722f0811588
+
+###
+
+POST http://localhost:3000/elevages
+Content-Type:  application/json
+
+{
+"dateElevage": "2021-11-14",
+"dateApprouve": "2021-11-15",
+"etat":"false"
+}
+
+
+###
+
+PATCH http://localhost:3000/elevages/619134942a1f4722f081158a
+Content-Type:  application/json
+
+{
+"dateElevage": "2021-11-16",
+"dateApprouve": "2021-11-19",
+"etat":"0"
+}
+###
+DELETE http://localhost:3000/elevages/618a2d3a13595026c78d88b2
+
+
+###
+//commande 
+
+GET http://localhost:3000/commandesP
+
+###
+
+GET http://localhost:3000/commandesP/619143241c3cf1f9be0ff743
+
+###
+
+POST http://localhost:3000/commandesP
+Content-Type:  application/json
+
+{
+"dateCommande": "2021-11-20",
+"dateApprouve": "2021-11-22",
+"etat":"false"
+}
+
+
+###
+
+PATCH http://localhost:3000/commandesP/619143241c3cf1f9be0ff743
+Content-Type:  application/json
+
+{
+"dateCommande": "2021-11-22",
+"dateApprouve": "2021-11-23",
+"etat":"true"
+}
+###
+DELETE http://localhost:3000/commandesP/618a2d3a13595026c78d88b2
+
+###
+//user
+GET http://localhost:3000/users
+
+###
+
+GET http://localhost:3000/users/618bf0629193b68001202011
+
+###
+
+ 
+###
+GET http://localhost:3000/users/authentificationAvecToken
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5vcmFAZ21haWwuY29tIiwiaWF0IjoxNjM3NjYxMzY0LCJleHAiOjE2Mzc2NjEzNzl9.4vthD7k3MXxpbe7jPM2W1DWKU4YSl5c8tU7dRWZV5UU
+###
+POST http://192.168.254.128:3000/users/login
+Content-Type:  application/json
+
+{
+"email": "saw@gmail.com",
+"mdp": "1234"
+}
+
+
+###
+
+POST http://192.168.254.128:3000/users
+Content-Type:  application/json
+
+{
+"nomprenom":"",
+"adresse":"",
+"localisation":"",
+"email": "saw@gmail.com",
+"role": "",
+"mdp": "1234",
+"pdp": ""
+}
+###
+PATCH http://localhost:3000/users/61992315de4bdac4b119cf00
+Content-Type:  application/json
+
+{
+"nomprenom":"sawssen",
+"pseudo": "sawsaw",
+"adresse":"ariana",
+"localisation":"messin",
+"email": "saw0@gmail.com",
+"role": "admin",
+"mdp": "0000",
+"pdp": "url"
+}
+
+###
+DELETE http://localhost:3000/users/61995748b1c375342ac0b6bf
+
+
+###
+//panier
+GET http://localhost:3000/paniers
+
+###
+
+GET http://localhost:3000/paniers/618bf0629193b68001202011
+
+
+###
+DELETE http://localhost:3000/paniers/61915fe938fc679049a07f51
+
+
+###
+//favoris
+GET http://localhost:3000/favoris
+
+###
+
+GET http://localhost:3000/favoris/618bf0629193b68001202011
+
+
+###
+DELETE http://localhost:3000/favoris/61915fe938fc679049a07f51
