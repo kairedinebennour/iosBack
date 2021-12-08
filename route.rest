@@ -152,27 +152,27 @@ GET http://localhost:3000/users
 
 ###
 
-GET http://localhost:3000/users/618bf0629193b68001202011
+GET http://localhost:3000/users/uthentificationAvecToken
 
 ###
 
  
 ###
 GET http://localhost:3000/users/authentificationAvecToken
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5vcmFAZ21haWwuY29tIiwiaWF0IjoxNjM3NjYxMzY0LCJleHAiOjE2Mzc2NjEzNzl9.4vthD7k3MXxpbe7jPM2W1DWKU4YSl5c8tU7dRWZV5UU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndhamRpQGdtYWlsLmNvbSIsImlhdCI6MTYzODczODIyNn0.RxaCYPq-3-etvERMxTfP7UFBOWdCqrmF_gsvvF4KgnA
 ###
 POST http://192.168.254.128:3000/users/login
 Content-Type:  application/json
 
 {
-"email": "saw@gmail.com",
-"mdp": "1234"
+"email": "wajdi@gmail.com",
+"mdp": "1111"
 }
 
 
 ###
 
-POST http://192.168.254.128:3000/users
+POST http://192.168.254.128:3000/users/register
 Content-Type:  application/json
 
 {
@@ -180,7 +180,7 @@ Content-Type:  application/json
 "adresse":"",
 "localisation":"",
 "email": "saw@gmail.com",
-"role": "",
+"role":"client",
 "mdp": "1234",
 "pdp": ""
 }

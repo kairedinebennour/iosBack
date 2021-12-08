@@ -2,16 +2,17 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/product')
 
-//getting all 
+//Getting products by id of the user
 router.get('/',async (req,res) =>{
 try{
-    const products = await Product.find()
+    const products = await Product.find().populate("idUser")
     res.json(products)
 
 } catch(err){
     res.status(500).json({ message : err.message})
 }
 })
+
 //getting one
 router.get('/:id', getProduct ,(req,res) =>{
 res.send(res.product)
@@ -20,6 +21,7 @@ res.send(res.product)
 //creating one
 router.post('/',async (req,res) =>{
     const product = new Product({
+        
         nom: req.body.nom,
         libelle: req.body.libelle,
         quantite: req.body.quantite,

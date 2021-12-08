@@ -20,6 +20,12 @@ try{
 }
 })
 
+//getting one
+router.get('/:id', getUser ,(req,res) =>{
+res.send(res.user)
+})
+
+
   //Login
   router.post('/login',async (req, res) => {
 
@@ -34,7 +40,10 @@ try{
         
         const token = jwt.sign({email: user.email}, process.env.ACCESS_TOKEN_SECRET)
         if(token){
-         res.json({token: token})
+         res.json({
+           token: token,
+           user: user
+          })
       } else {
         res.json({message: "Authentification Failed", success: false } )
       }
@@ -67,16 +76,17 @@ function authenticateToken(req,res,next){
   
   //BEARER TOKEN
   const authHeader = req.headers['authorization']
-  const token = authHeader && authHeader.split(' ')[1]
-  if(token == null) return res.sendStatus(401)
+  if(authHeader){
+    const token = authHeader.split(' ')[1]
   
-  jwt.verify(token,process.env.ACCESS_TOKEN_SECRET,(err,email) => {
+  const decoded = jwt.verify(token,process.env.ACCESS_TOKEN_SECRET,(err,email) => {
   if(err) return res.sendStatus(403)
   req.user = email //return email 
   console.log(email)
   next()
   })
   }
+}
 
   
 
@@ -102,7 +112,7 @@ res.send(res.user)
 
 
 //creating one
-router.post('/',async (req,res) =>{
+router.post('/register',async (req,res) =>{
   const salt = await bcrypt.genSalt() 
   const hasedPassword = await bcrypt.hash(req.body.mdp,salt)
   const user = new User({
@@ -113,7 +123,7 @@ router.post('/',async (req,res) =>{
       adresse: req.body.adresse,
       localisation:req.body.localisation,
       pdp: req.body.pdp,
-      role: req.body.role, 
+      role: req.body.role,
   })
   try{
       const newUser = await user.save()

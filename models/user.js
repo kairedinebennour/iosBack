@@ -31,9 +31,9 @@ const userSchema = new mongoose.Schema({
         type:String,
         
     },
-    role: {
+    role:{
         type:String,
-    },
+    }
     });
     // Custom validation for email
 userSchema.path('email').validate((val) => {
@@ -41,17 +41,5 @@ userSchema.path('email').validate((val) => {
     return emailRegex.test(val);
 }, 'Votre email est invalid');
 
-userSchema.methods.getUser=function () {
-    return({
-        _id: this._id,
-        email: this.email,
-        mdp: this.mdp,
-        nomprenom: this.nomprenom,
-        adresse: this.adresse,
-        localisation: this.localisation,
-        pdp: this.pdp,
-        role:this.role
-    })
-};
 
 module.exports = mongoose.model('users',userSchema)
