@@ -2,13 +2,14 @@ const mongoose = require('mongoose')
 
 const panierSchema = new mongoose.Schema({
 idProduit:{
-type:Number,
+    type : mongoose.Types.ObjectId,
+        ref: "produits"
 },
-idUser:{
-type:Number,
+idUser:{type : mongoose.Types.ObjectId,
+    ref: "users"
 },
-idAnimal: {
-type:Number,
+idAnimal: {type : mongoose.Types.ObjectId,
+    ref: "animals"
 },
 
 })

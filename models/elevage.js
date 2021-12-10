@@ -9,6 +9,7 @@ dateApprouve: {
 },
 etat:{
     type:Boolean,
+    default: 0
 }
 })
 module.exports = mongoose.model('elevages',elevageSchema)

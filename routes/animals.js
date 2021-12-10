@@ -51,10 +51,10 @@ router.patch('/:id',getAnimal,async (req,res) =>{
   if(req.body.race!=null){
       res.animal.race = req.body.race
   }
-  if(req.body.age!=0){
+  if(req.body.age!=null){
       res.animal.age = req.body.age
   }
-  if(req.body.sexe!=0){
+  if(req.body.sexe!=null){
       res.animal.sexe = req.body.sexe
   }
   if(req.body.taille!=null){
