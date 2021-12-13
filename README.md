@@ -36,9 +36,10 @@ After running the server you can either run the tests via :
 
     http://localhost:3000/ 
 
-With REST CLIENT extension : ![rest](https://user-images.githubusercontent.com/79059784/145899465-be9483e8-6dee-4871-b162-fa08a261dbdb.png)   </br>
+With REST CLIENT extension : </br>
 
- </br>
+![Microsoft VisualStudio Services Icons Default](https://user-images.githubusercontent.com/79059784/145899620-5f639ba3-7c27-4efc-9521-8e98f1707d01.png)  </br>
+
  
 <h1> Or </h1> 
 </br>
@@ -50,36 +51,24 @@ With Postman : </br>
 </br>
 
 
-
-
-
-
 ###
-### Yarn installation
-  After installing node, this project will need yarn too, so just run the following command.
+### Project folders :
+ The project contains : 
+ - #### Models : </br>
+ 
+       Users
+       Animals
+       Products
+       Paniers
+       Favoris
+       Elevages
+       CommandesP
+       Elevages
+       
+ - #### Routes : </br>
+ Containing the methods for each model (POST,GET,PATCH,DELETE,UPDATE)
 
-      $ npm install -g yarn
 
 ---
 
-## Install
 
-    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
-    $ cd PROJECT_TITLE
-    $ yarn install
-
-## Configure app
-
-Open `a/nice/path/to/a.file` then edit it with your settings. You will need:
-
-- A setting;
-- Another setting;
-- One more setting;
-
-## Running the project
-
-    $ yarn start
-
-## Simple build for production
-
-    $ yarn build
