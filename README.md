@@ -1,18 +1,27 @@
-# Backend of AnimalyProject
+# Animaly - Backend
 
-A nice project with a nice description
+Animaly is a mobile application designed for animals's lovers especially cats and dogs. </br>
+This application will give you the ability to adopt and buy animal equipments if needed. </br>
+
 
 ---
 ## Requirements
 
-For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
+For development, you will need Node.js , Express.js and mongoDB . </br>
 
-### Node
-- #### Node installation on Windows
+### Installation
+  - #### Environnement:
+  - Install VScode as our working environnement
+  - Install MongoCompass to get a clear vision of the database.
 
+
+
+
+- #### Node installation 
+- 
   Just go on [official Node.js website](https://nodejs.org/) and download the installer.
-Also, be sure to have `git` available in your PATH, `npm` might need it (You can find git [here](https://git-scm.com/)).
 
+- ####  installation 
 - #### Node installation on Ubuntu
 
   You can install nodejs and npm easily with apt install, just run the following commands.
