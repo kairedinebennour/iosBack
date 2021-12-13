@@ -41,7 +41,11 @@ With REST CLIENT extension :  </br>
 <h1> Or </h1> 
 </br>
 With Postman : </br>
-![2893aede23f01bfcbd2319326bc96a6ed0524eba759745ed6d73405a3a8b67a8](https://user-images.githubusercontent.com/79059784/145898862-db6f4d75-06d0-4598-8480-c7d52475eba0.png) </br>
+
+![2893aede23f01bfcbd2319326bc96a6ed0524eba759745ed6d73405a3a8b67a8](https://user-images.githubusercontent.com/79059784/145899291-96753778-417d-488f-83cf-2436e4bd2549.png)
+
+
+</br>
 
 
 
