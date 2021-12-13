@@ -37,7 +37,7 @@ After running the server you can either run the tests via :
     http://localhost:3000/ 
 
 With REST CLIENT extension : 
- ![Microsoft VisualStudio Services Icons Default](https://user-images.githubusercontent.com/79059784/145898805-424c31d9-8fd7-44c7-b73e-02efa8e51cc8.png  | width=30) </br>
+ ![][Microsoft VisualStudio Services Icons Default](https://user-images.githubusercontent.com/79059784/145898805-424c31d9-8fd7-44c7-b73e-02efa8e51cc8.png  | width=30) </br>
 <h1> Or </h1> 
 
 With Postman :
