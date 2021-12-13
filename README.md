@@ -66,7 +66,10 @@ With Postman : </br>
        Elevages
        
  - #### Routes : </br>
- Containing the methods for each model (POST,GET,PATCH,DELETE,UPDATE)
+ Containing the methods for each model (POST,GET,PATCH,DELETE,UPDATE) </br>
+ 
+ ![image](https://user-images.githubusercontent.com/79059784/145900552-26d612d3-77d4-4f37-ba51-f8b4289af6a7.png)
+
 
 
 ---
