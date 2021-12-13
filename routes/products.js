@@ -48,10 +48,10 @@ if(req.body.nom !=null){
 if(req.body.libelle!=null){
     res.product.libelle = req.body.libelle
 }
-if(req.body.quantite!=0){
+if(req.body.quantite!=null){
     res.product.quantite = req.body.quantite
 }
-if(req.body.prix!=0){
+if(req.body.prix!=null){
     res.product.prix = req.body.prix
 }
 if(req.body.categorie!=null){

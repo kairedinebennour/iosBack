@@ -56,6 +56,36 @@ const updatedElevage = await res.elevage.save()
 })
 
 
+//updating one
+//patch not put because it will update all 
+//informatiosn instead of the info passed on router
+router.patch('/:id/valide',getElevage,async (req,res) =>{
+ 
+
+      res.elevage.etat = 1
+  try{
+  const updatedElevage = await res.elevage.save()
+      res.json(updatedElevage)
+    } catch (err) {
+      res.status(400).json({ message: err.message })
+    }
+  })
+
+  //updating one
+//patch not put because it will update all 
+//informatiosn instead of the info passed on router
+router.patch('/:id/refus',getElevage,async (req,res) =>{
+ 
+
+  res.elevage.etat = 0
+try{
+const updatedElevage = await res.elevage.save()
+  res.json(updatedElevage)
+} catch (err) {
+  res.status(400).json({ message: err.message })
+}
+})
+
 //deleting one
 router.delete('/:id',getElevage,async (req,res) => {
 try {

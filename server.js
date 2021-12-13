@@ -1,50 +1,51 @@
-require('dotenv').config()
-
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken');
+const bodyParser = require("body-parser")
+const connectDB = require('./DB/connectionMdb')
 
-mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser: true})
-const db = mongoose.connection
-db.on('error', (error) => console.error(error))
-db.once('open',() => console.log('Connected to Database'))
+const PORT = process.env.PORT || 3000
+
 
 //set our server to accept JSON
 app.use(express.json()) //body parser to parse json
 
+connectDB();
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 
 
 
 
+ const animalsRouter = require("./routes/animals")
+ app.use('/animals',animalsRouter)
 
-// const animalsRouter = require("./routes/animals")
-// app.use('/animals',animalsRouter)
+const userRouter = require("./routes/users");
 
-// const productsRouter = require("./routes/products")
-// app.use('/products',productsRouter)
-
-// const elevageRouter = require("./routes/elevages")
-// app.use('/elevages',elevageRouter)
-
-// const commandeProduitRouter = require("./routes/commandesP")
-// app.use('/commandesP',commandeProduitRouter)
-
-const userRouter = require("./routes/users")
 app.use('/users',userRouter)
 
+const productsRouter = require("./routes/products");
+app.use('/products',productsRouter )
+
+const paniersRouter = require("./routes/paniers");
+app.use('/panier', paniersRouter)
 
 
+const commandePRouter = require("./routes/commandesP");
+app.use('/commandeP',commandePRouter)
+
+const favorisRouter = require("./routes/favoris");
+app.use('/favoris', favorisRouter)
+
+const elevagesRouter = require("./routes/elevages");
+app.use('/elevages', elevagesRouter)
 
 
+app.listen(PORT, ()=> {console.log(`Server is running on http://localhost:${PORT}`)})
+
+ 
 
 
-// const panierRouter = require("./routes/paniers")
-// app.use('/paniers',panierRouter)
-
-// const favorisRouter = require("./routes/favoris")
-// app.use('/favoris',favorisRouter)
-
-app.listen(3000, () => console.log('Server Started'));

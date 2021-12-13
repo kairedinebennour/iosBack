@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 
 
-require ('dotenv').config
+require ('dotenv').config()
 
 
 
@@ -20,43 +20,29 @@ try{
 }
 })
 
-//getting one
-router.get('/:id', getUser ,(req,res) =>{
-res.send(res.user)
-})
-
-
-  //Login
+  //..
   router.post('/login',async (req, res) => {
 
     const emailUser = req.body.email
     const mdpUser = req.body.mdp
 
     const users = await User.find()
-    const user = users.find(user => user.email == emailUser)
+    const user = users.find(user => user.email == emailUser && user.mdp == mdpUser)
     if (user){
-      if(await bcrypt.compare(mdpUser, user.mdp)) {
-        
-        
         const token = jwt.sign({email: user.email}, process.env.ACCESS_TOKEN_SECRET)
+
         if(token){
-         res.json({
-           token: token,
-           user: user
-          })
+         res.json({token: token})
       } else {
         res.json({message: "Authentification Failed", success: false } )
-      }
-      }else{
-        res.send('Not Allowed')
-      }
+    } 
   
-
 }else {
   res.json({message: "Authentification Failed", success: false } )
   }
 })
-
+  
+ 
 
 
 //..
@@ -64,7 +50,7 @@ res.send(res.user)
 router.get('/authentificationAvecToken', authenticateToken ,async (req,res) =>{
 
   const users = await User.find()
-  res.json(users.filter(userEmail => userEmail.email  === req.user.email))
+  res.json(users.find(userEmail => userEmail.email  === req.user.email))
   })
 
 
@@ -76,17 +62,16 @@ function authenticateToken(req,res,next){
   
   //BEARER TOKEN
   const authHeader = req.headers['authorization']
-  if(authHeader){
-    const token = authHeader.split(' ')[1]
+  const token = authHeader && authHeader.split(' ')[1]
+  if(token == null) return res.sendStatus(401)
   
-  const decoded = jwt.verify(token,process.env.ACCESS_TOKEN_SECRET,(err,email) => {
+  jwt.verify(token,process.env.ACCESS_TOKEN_SECRET,(err,email) => {
   if(err) return res.sendStatus(403)
   req.user = email //return email 
   console.log(email)
   next()
   })
   }
-}
 
   
 
@@ -97,7 +82,6 @@ function authenticateToken(req,res,next){
 router.get('/:id', getUser ,(req,res) =>{
 res.send(res.user)
 })
-
 
 
 
@@ -112,23 +96,24 @@ res.send(res.user)
 
 
 //creating one
-router.post('/register',async (req,res) =>{
-  const salt = await bcrypt.genSalt() 
-  const hasedPassword = await bcrypt.hash(req.body.mdp,salt)
+//creating one
+router.post('/',async (req,res) =>{
+  // const salt = await bcrypt.genSalt() 
+  // const hasedPassword = await bcrypt.hash(req.body.mdp,salt)
   const user = new User({
       email: req.body.email,
-      mdp: hasedPassword,
+      mdp: req.body.mdp,
       nomprenom: req.body.nomprenom,
       pseudo: req.body.pseudo,
       adresse: req.body.adresse,
       localisation:req.body.localisation,
       pdp: req.body.pdp,
-      role: req.body.role,
+      role: req.body.role, 
   })
   try{
       const newUser = await user.save()
-      console.log(salt)
-      console.log(hasedPassword)
+      // console.log(salt)
+      // console.log(hasedPassword)
       res.status(201).json(newUser)
   }catch(err){
       res.status(400).json({message: err.message})
@@ -148,7 +133,7 @@ router.post('/register',async (req,res) =>{
 //updating one
 //patch not put because it will update all 
 //informatiosn instead of the info passed on router
-router.patch('/:id',getUser,async (req,res) =>{
+router.patch('/',authenticateToken,async (req,res) =>{
 if(req.body.nomprenom !=null){
     res.user.nomprenom = req.body.nomprenom
 }

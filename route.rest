@@ -152,16 +152,16 @@ GET http://localhost:3000/users
 
 ###
 
-GET http://localhost:3000/users/uthentificationAvecToken
+GET http://localhost:3000/users/61a691eba508344a185ca94d
 
 ###
 
  
 ###
 GET http://localhost:3000/users/authentificationAvecToken
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndhamRpQGdtYWlsLmNvbSIsImlhdCI6MTYzODczODIyNn0.RxaCYPq-3-etvERMxTfP7UFBOWdCqrmF_gsvvF4KgnA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndhamRpQGdtYWlsLmNvbSIsImlhdCI6MTYzOTM1MzYwMn0.BWOIYP37nefCzuwLPFRp05mVFJmy2-SGwzy8thIG4Co
 ###
-POST http://192.168.254.128:3000/users/login
+POST http://localhost:3000/users/login
 Content-Type:  application/json
 
 {
@@ -172,20 +172,22 @@ Content-Type:  application/json
 
 ###
 
-POST http://192.168.254.128:3000/users/register
+POST http://192.168.254.128:3000/users
 Content-Type:  application/json
 
 {
 "nomprenom":"",
+"pseudo": "",
 "adresse":"",
 "localisation":"",
 "email": "saw@gmail.com",
-"role":"client",
+"role": "",
 "mdp": "1234",
 "pdp": ""
 }
 ###
-PATCH http://localhost:3000/users/61992315de4bdac4b119cf00
+PATCH http://localhost:3000/users
+
 Content-Type:  application/json
 
 {
