@@ -37,11 +37,13 @@ After running the server you can either run the tests via :
     http://localhost:3000/ 
 
 With REST CLIENT extension : 
-![image](https://user-images.githubusercontent.com/79059784/145898463-4ba2782e-fad5-4041-980f-1af139508443.png) </br>
+ ![Microsoft VisualStudio Services Icons Default](https://user-images.githubusercontent.com/79059784/145898805-424c31d9-8fd7-44c7-b73e-02efa8e51cc8.png) </br>
 <h1> Or </h1> 
 
 With Postman :
-![image](https://user-images.githubusercontent.com/79059784/145898670-a01c5ad5-04d3-4cfb-84c8-62673a522760.png)
+![2893aede23f01bfcbd2319326bc96a6ed0524eba759745ed6d73405a3a8b67a8](https://user-images.githubusercontent.com/79059784/145898862-db6f4d75-06d0-4598-8480-c7d52475eba0.png)
+
+
 
 
 
