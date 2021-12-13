@@ -19,25 +19,32 @@ For development, you will only need Node.js ,express and mongoose.
   
 - #### MongoCompass installation
 
-  Just go on [official MongoCompass website](https://www.mongodb.com/products/compass) and download.
+ Once done , open VSCode and run these commands on terminal:
   
-      $ sudo apt install nodejs
-      $ sudo apt install npm
+       npm install node
+       npm install express
+       npm install mongoose
 
-- #### Other Operating Systems
-  You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
+- #### Running the server :
 
-If the installation was successful, you should be able to run the following command.
+To run the server write this command on terminal:
 
-    $ node --version
-    v8.11.3
+    npm run devstart
 
-    $ npm --version
-    6.1.0
 
-If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
+After running the server you can either run the tests via : 
 
-    $ npm install npm -g
+    http://localhost:3000/ 
+
+With REST CLIENT extension : 
+![image](https://user-images.githubusercontent.com/79059784/145898463-4ba2782e-fad5-4041-980f-1af139508443.png) </br>
+<h1> Or </h1> 
+
+With Postman :
+![image](https://user-images.githubusercontent.com/79059784/145898670-a01c5ad5-04d3-4cfb-84c8-62673a522760.png)
+
+
+
 
 ###
 ### Yarn installation
